@@ -38,6 +38,18 @@ namespace Develier.Simple_IoC.Tests
 
             Assert.AreEqual(entity.GetType(), typeof(Person));
         }
+
+        [Test]
+        public void Should_Return_Same_Singleton_When_Get_Instance_Is_Called_Twice()
+        {
+            _container.RegisterSingleton<IPerson, Person>();
+
+            var expectedSingleton = _container.GetInstance<IPerson>();
+
+            var secondTimeCalledSingleton = _container.GetInstance<IPerson>();
+
+            Assert.AreSame(expectedSingleton, secondTimeCalledSingleton);
+        }
     }
 
 
