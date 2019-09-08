@@ -24,7 +24,7 @@ namespace Develier.Simple_IoC.Core
             return (T) GetInstance(typeof(T));
         }
 
-        public object GetInstance(Type type)
+        private object GetInstance(Type type)
         {
             if (_enitityMapper.ContainsKey(type))
             {
