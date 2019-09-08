@@ -1,6 +1,7 @@
+using Develier.Simple_IoC.Core;
 using NUnit.Framework;
 
-namespace Tests
+namespace Develier.Simple_IoC.Tests
 {
     public class ContainerShould
     {
@@ -10,9 +11,16 @@ namespace Tests
         }
 
         [Test]
-        public void Test1()
+        public void ShouldCreateCorrectInstance_Given_A_Type()
         {
+            Container container = new Container();
+
+            container.Resolve();
+
             Assert.Pass();
         }
     }
+
+
+
 }
